@@ -8,6 +8,6 @@ Step 2: Call `python webpagetest.py`.  This will send a test request on my priva
 
 Step 3: Wait a while, I guess, lol.  It seems to take a while for the output to process on the WPT private instance.
 
-Step 4: Call `python downloadhars.py`.  This will export the HAR file of each site's test results, and store it in the har_files/ folder.  Note that each HAR file has the name '<index>-<site>-<testId>.har'.
+Step 4: Call `python downloadhars.py`.  This will export the HAR file of each site's test results, and store it in the har_files/ folder.  Note that each HAR file has the name '\<index>-\<site>-\<testId>.har'.
 
 Next goal (todo): Run haralyzer on each HAR file.
