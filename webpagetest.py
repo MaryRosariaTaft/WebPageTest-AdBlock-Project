@@ -9,8 +9,8 @@ def request_test(domain, location_id, wpt_url):
 
 
 if __name__ == "__main__":
-    input_file = "sites4.txt"
-    output_file = "wptids4.txt"
+    input_file = "sites.txt"
+    output_file = "wptids.txt"
 
     sites = open(input_file, "r")
     ids = open(output_file, "w")
@@ -19,7 +19,7 @@ if __name__ == "__main__":
     i = 1
     while site:
         response = request_test(site, "first_wptdriver", "http://3.93.81.121")
-        ids.write(str(i+300)) #test_num
+        ids.write(str(i).zfill(3)) #test_num
         ids.write("\n")
         ids.write(site) #site
         ids.write(response["data"]["testId"]) #wptid
