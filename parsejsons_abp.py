@@ -1,15 +1,12 @@
 import json
 from os import listdir
 
-for har in listdir("./json_files/"):
+for har in listdir("./json_files_abp/"):
     if(har[-5:] != ".json"):
         continue
-    with open("./json_files/%s" % har, 'r') as f:
+    with open("./json_files_abp/%s" % har, 'r') as f:
         data = json.loads(f.read())
     output = []
-
-    #TODO: add website URL to output!! oops.
-
     try:
         output.append(data["data"]["average"]["firstView"]["loadTime"])
     except:
