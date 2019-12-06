@@ -7,9 +7,10 @@ for har in listdir("./json_files/"):
     with open("./json_files/%s" % har, 'r') as f:
         data = json.loads(f.read())
     output = []
-
-    #TODO: add website URL to output!! oops.
-
+    try:
+        output.append(data["data"]["url"])
+    except:
+        output.append("none")
     try:
         output.append(data["data"]["average"]["firstView"]["loadTime"])
     except:
@@ -38,6 +39,6 @@ for har in listdir("./json_files/"):
         output.append(data["data"]["average"]["firstView"]["bigImageCount"])
     except:
         output.append(-1)
-    for i in range(7):
+    for i in range(8):
         print(output[i], end=",")
     print("")
